@@ -1,0 +1,1613 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#050507">
+<link rel="icon" href="data:,">
+<title>Rosalie Wu · 音乐制作与内容作品</title>
+<!--
+  Spatial Editorial V2 · development-ready token list
+  Color: canvas / surface / ink / secondary / hairline / night / glass-light / glass-dark / accent / accent-blue
+  Space: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 72 / 112
+  Radius: 12 / 22 / 30 / 999
+  Shadow: soft / float
+  Motion: enter / morph / 160ms / 280ms / 440ms / 640ms
+-->
+<style>
+:root {
+  --canvas:#f5f5f7;
+  --surface:#ffffff;
+  --surface-warm:#fbfaf8;
+  --ink:#1d1d1f;
+  --secondary:#5f5f65;
+  --tertiary:#86868b;
+  --hairline:rgba(0,0,0,.1);
+  --hairline-dark:rgba(255,255,255,.14);
+  --night:#050507;
+  --night-soft:#111114;
+  --glass-light:rgba(255,255,255,.76);
+  --glass-dark:rgba(20,20,24,.68);
+  --accent:#d7a567;
+  --accent-soft:#f1d6b5;
+  --accent-blue:#0071e3;
+  --success:#257a4b;
+  --warning:#9a621b;
+  --danger:#b42318;
+  --radius-sm:12px;
+  --radius-lg:22px;
+  --radius-stage:30px;
+  --radius-pill:999px;
+  --shadow-soft:0 1px 2px rgba(0,0,0,.04),0 16px 48px rgba(0,0,0,.06);
+  --shadow-float:0 22px 70px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.16);
+  --ease-enter:cubic-bezier(.16,1,.3,1);
+  --ease-morph:cubic-bezier(.65,0,.35,1);
+  --content:1180px;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; background:var(--canvas); }
+body {
+  margin:0;
+  background:var(--canvas);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+body.sheet-open { overflow:hidden; }
+button,input,a { font:inherit; }
+button,a { -webkit-tap-highlight-color:transparent; }
+button { cursor:pointer; }
+a { color:inherit; }
+img,video { max-width:100%; }
+[hidden] { display:none !important; }
+:focus-visible {
+  outline:3px solid rgba(0,113,227,.52);
+  outline-offset:4px;
+}
+.sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+.site-nav {
+  position:fixed;
+  inset:18px 20px auto;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  max-width:calc(var(--content) + 48px);
+  min-height:52px;
+  margin:0 auto;
+  padding:6px 8px 6px 18px;
+  color:#f5f5f7;
+  background:rgba(18,18,21,.62);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:var(--radius-pill);
+  box-shadow:0 10px 34px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.08);
+  -webkit-backdrop-filter:blur(28px) saturate(180%);
+  backdrop-filter:blur(28px) saturate(180%);
+}
+.site-nav__brand {
+  min-width:42px;
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:-.01em;
+  text-decoration:none;
+}
+.site-nav__mark {
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  color:var(--night);
+  background:#f5f5f7;
+  border-radius:50%;
+  font-size:13px;
+  font-weight:800;
+}
+.site-nav__links { display:flex; align-items:center; gap:4px; }
+.site-nav__links a {
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:0 15px;
+  border-radius:var(--radius-pill);
+  color:rgba(255,255,255,.7);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:650;
+  transition:color 180ms,background 180ms;
+}
+.site-nav__links a:hover { color:#fff; background:rgba(255,255,255,.1); }
+.site-nav__links a[aria-current="page"] {
+  color:#fff;
+  background:rgba(255,255,255,.14);
+}
+.site-nav__index {
+  color:rgba(255,255,255,.42);
+  font-size:10px;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:.06em;
+}
+.site-nav__links a[aria-current="page"] .site-nav__index { color:var(--accent-soft); }
+.site-nav__label--short { display:none; }
+.portfolio-page {
+  min-height:calc(100svh - 164px);
+  animation:page-reveal 440ms var(--ease-enter) both;
+}
+@keyframes page-reveal {
+  from { opacity:0; transform:translateY(10px); }
+  to { opacity:1; transform:none; }
+}
+.media-hero {
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  color:#f5f5f7;
+  background:
+    radial-gradient(circle at 69% 47%,rgba(215,165,103,.17),transparent 31%),
+    var(--night);
+}
+.media-hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.32;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:linear-gradient(to bottom,transparent 4%,#000 36%,#000 82%,transparent);
+}
+.media-hero__glow {
+  position:absolute;
+  width:min(66vw,920px);
+  aspect-ratio:1.8;
+  left:44%;
+  bottom:11%;
+  transform:translateX(-24%) rotate(-4deg);
+  background:radial-gradient(ellipse,rgba(215,165,103,.18),rgba(215,165,103,.02) 50%,transparent 72%);
+  filter:blur(26px);
+  pointer-events:none;
+}
+.media-hero__inner {
+  position:relative;
+  z-index:1;
+  width:min(var(--content),calc(100% - 48px));
+  margin:0 auto;
+  padding:148px 0 56px;
+}
+.media-hero__eyebrow,
+.section-heading__eyebrow,
+.project-story__index,
+.track-chapter__number {
+  font-size:12px;
+  font-weight:760;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.media-hero__eyebrow { color:rgba(255,255,255,.58); }
+.media-hero__title {
+  max-width:980px;
+  margin:18px 0 0;
+  font-size:clamp(54px,8.4vw,112px);
+  line-height:.94;
+  letter-spacing:-.066em;
+  font-weight:720;
+  text-wrap:balance;
+}
+.media-hero__meta {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px 18px;
+  margin:24px 0 0;
+  color:rgba(255,255,255,.66);
+  font-size:14px;
+}
+.media-hero__meta span + span::before {
+  content:"";
+  display:inline-block;
+  width:3px;
+  height:3px;
+  margin:0 18px 3px 0;
+  background:rgba(255,255,255,.34);
+  border-radius:50%;
+}
+.waveform {
+  height:142px;
+  display:flex;
+  align-items:center;
+  gap:clamp(2px,.27vw,5px);
+  margin:42px 0 22px;
+  padding:0 2px;
+  overflow:hidden;
+}
+.waveform__bar {
+  width:100%;
+  min-width:2px;
+  height:calc(var(--wave-height) * 1%);
+  min-height:3px;
+  max-height:100%;
+  background:linear-gradient(to top,rgba(215,165,103,.28),var(--accent-soft),rgba(255,255,255,.74));
+  border-radius:var(--radius-pill);
+  transform-origin:center;
+  transition:transform 640ms var(--ease-enter),opacity 320ms;
+}
+.media-hero[data-playing="true"] .waveform__bar:nth-child(3n) {
+  animation:wave-pulse 1.2s ease-in-out infinite alternate;
+}
+@keyframes wave-pulse {
+  to { transform:scaleY(.68); opacity:.72; }
+}
+.timeline {
+  display:grid;
+  grid-template-columns:58px 1fr 58px;
+  align-items:center;
+  gap:12px;
+  color:rgba(255,255,255,.55);
+  font-size:12px;
+  font-variant-numeric:tabular-nums;
+}
+.timeline input {
+  width:100%;
+  height:44px;
+  appearance:none;
+  background:transparent;
+  cursor:pointer;
+}
+.timeline input::-webkit-slider-runnable-track {
+  height:3px;
+  background:linear-gradient(90deg,var(--accent) var(--progress,0%),rgba(255,255,255,.18) var(--progress,0%));
+  border-radius:var(--radius-pill);
+}
+.timeline input::-webkit-slider-thumb {
+  width:14px;
+  height:14px;
+  margin-top:-5.5px;
+  appearance:none;
+  background:#fff;
+  border:0;
+  border-radius:50%;
+  box-shadow:0 0 0 5px rgba(255,255,255,.08);
+}
+.player {
+  display:grid;
+  grid-template-columns:auto auto auto minmax(180px,1fr) minmax(112px,150px) auto;
+  align-items:center;
+  gap:10px;
+  width:min(810px,100%);
+  min-height:76px;
+  margin:34px auto 0;
+  padding:11px 14px;
+  background:var(--glass-dark);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--radius-pill);
+  box-shadow:var(--shadow-float);
+  -webkit-backdrop-filter:blur(28px) saturate(180%);
+  backdrop-filter:blur(28px) saturate(180%);
+}
+.player__button,
+.dock__button,
+.sheet__close,
+.video-plate__play {
+  min-width:44px;
+  min-height:44px;
+  display:inline-grid;
+  place-items:center;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  color:inherit;
+  background:transparent;
+  transition:background 180ms,transform 100ms;
+}
+.player__button:hover,.dock__button:hover { background:rgba(255,255,255,.1); }
+.player__button:active,.dock__button:active,.video-plate__play:active { transform:scale(.94); }
+.player__button--primary {
+  color:var(--night);
+  background:#f5f5f7;
+}
+.player__button--primary:hover { background:#fff; }
+.player svg,.dock svg { width:21px; height:21px; fill:currentColor; }
+.player__track {
+  min-width:0;
+  padding:0 12px;
+}
+.player__track strong,.dock__copy strong {
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:14px;
+  font-weight:720;
+  color:#fff;
+}
+.player__track span,.dock__copy span {
+  display:block;
+  color:rgba(255,255,255,.52);
+  font-size:11px;
+}
+.player__volume,
+.dock__volume {
+  min-width:112px;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:rgba(255,255,255,.58);
+}
+.player__volume svg,
+.dock__volume svg {
+  width:17px;
+  height:17px;
+  flex:none;
+  fill:currentColor;
+}
+.player__volume input,
+.dock__volume input {
+  width:100%;
+  height:44px;
+  appearance:none;
+  background:transparent;
+  cursor:pointer;
+}
+.player__volume input::-webkit-slider-runnable-track,
+.dock__volume input::-webkit-slider-runnable-track {
+  height:3px;
+  background:linear-gradient(90deg,var(--accent) var(--volume,72%),rgba(255,255,255,.18) var(--volume,72%));
+  border-radius:var(--radius-pill);
+}
+.player__volume input::-webkit-slider-thumb,
+.dock__volume input::-webkit-slider-thumb {
+  width:14px;
+  height:14px;
+  margin-top:-5.5px;
+  appearance:none;
+  background:#fff;
+  border:0;
+  border-radius:50%;
+}
+.player__status {
+  min-width:115px;
+  color:rgba(255,255,255,.58);
+  font-size:11px;
+  text-align:right;
+}
+.player__status[data-state="error"] { color:#ffb4a9; }
+.dock__status[data-state="ready"] { display:none; }
+.dock__status[data-state="error"] {
+  display:block;
+  margin-top:1px;
+  color:#ffb4a9;
+}
+.floating-dock {
+  position:fixed;
+  z-index:45;
+  right:max(18px,env(safe-area-inset-right));
+  bottom:max(18px,calc(env(safe-area-inset-bottom) + 12px));
+  display:grid;
+  grid-template-columns:44px 44px minmax(145px,1fr) minmax(82px,108px) 44px 44px;
+  align-items:center;
+  gap:7px;
+  width:min(590px,calc(100vw - 36px));
+  min-height:64px;
+  padding:8px 10px;
+  color:#fff;
+  background:var(--glass-dark);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--radius-pill);
+  box-shadow:var(--shadow-float);
+  -webkit-backdrop-filter:blur(28px) saturate(180%);
+  backdrop-filter:blur(28px) saturate(180%);
+  transform:translateY(18px) scale(.96);
+  opacity:0;
+  transition:transform 440ms var(--ease-enter),opacity 280ms;
+}
+.floating-dock[data-active="true"] { transform:none; opacity:1; }
+.dock__copy { min-width:0; padding:0 6px; }
+.dock__volume { min-width:82px; }
+.section {
+  width:min(var(--content),calc(100% - 48px));
+  margin:0 auto;
+  padding:112px 0;
+}
+.section-heading {
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(260px,.7fr);
+  gap:70px;
+  align-items:end;
+  margin-bottom:64px;
+}
+.section-heading__eyebrow { color:var(--accent-blue); }
+.section-heading h2 {
+  max-width:760px;
+  margin:10px 0 0;
+  font-size:clamp(38px,5vw,70px);
+  line-height:1.02;
+  letter-spacing:-.052em;
+  font-weight:720;
+}
+.section-heading p {
+  margin:0;
+  color:var(--secondary);
+  font-size:17px;
+}
+.track-list { border-top:1px solid var(--hairline); }
+.track-chapter {
+  position:relative;
+  display:grid;
+  grid-template-columns:74px minmax(260px,.8fr) minmax(320px,1.2fr) auto;
+  gap:34px;
+  align-items:center;
+  min-height:210px;
+  padding:36px 0;
+  border-bottom:1px solid var(--hairline);
+  transition:color 200ms,background 200ms;
+}
+.track-chapter::before {
+  content:"";
+  position:absolute;
+  inset:0 -24px;
+  z-index:-1;
+  background:var(--surface);
+  border-radius:var(--radius-lg);
+  opacity:0;
+  transform:scale(.99);
+  transition:opacity 180ms,transform 180ms;
+}
+.track-chapter:hover::before,.track-chapter[data-current="true"]::before {
+  opacity:1;
+  transform:none;
+}
+.track-chapter__number { color:var(--tertiary); font-variant-numeric:tabular-nums; }
+.track-chapter__title h3 {
+  margin:0;
+  font-size:clamp(27px,3.1vw,46px);
+  line-height:1.04;
+  letter-spacing:-.042em;
+  font-weight:680;
+}
+.track-chapter__title p {
+  margin:10px 0 0;
+  color:var(--tertiary);
+  font-size:13px;
+}
+.track-chapter__story {
+  margin:0;
+  color:var(--secondary);
+  font-size:16px;
+}
+.track-chapter__actions {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+}
+.text-button {
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0 16px;
+  color:var(--ink);
+  background:transparent;
+  border:1px solid var(--hairline);
+  border-radius:var(--radius-pill);
+  font-size:13px;
+  font-weight:680;
+  transition:border-color 180ms,background 180ms;
+}
+.text-button:hover { border-color:rgba(0,0,0,.28); background:rgba(255,255,255,.72); }
+.text-button--primary { color:#fff; background:var(--ink); border-color:var(--ink); }
+.text-button--primary:hover { color:#fff; background:#000; }
+.project-zone { background:var(--surface-warm); border-top:1px solid var(--hairline); }
+.project-story {
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(240px,.66fr) minmax(0,1.34fr);
+  gap:80px;
+  padding:74px 0;
+  border-top:1px solid var(--hairline);
+  scroll-margin-top:100px;
+}
+.project-story:first-child { border-top:0; }
+.project-story__index { color:var(--tertiary); }
+.project-story__lead h3 {
+  margin:14px 0 0;
+  font-size:clamp(31px,4vw,56px);
+  line-height:1.03;
+  letter-spacing:-.046em;
+  font-weight:710;
+}
+.project-story__lead p {
+  margin:18px 0 0;
+  color:var(--secondary);
+  max-width:430px;
+}
+.project-story__status {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:24px;
+  color:var(--secondary);
+  font-size:13px;
+}
+.project-story__status::before {
+  content:"";
+  width:8px;
+  height:8px;
+  flex:none;
+  background:var(--status-color,var(--tertiary));
+  border-radius:50%;
+}
+.project-story__status[data-tone="available"] { --status-color:var(--success); }
+.project-story__status[data-tone="limited"] { --status-color:var(--warning); }
+.project-story__facts {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 38px;
+  margin:0;
+}
+.project-story__fact {
+  min-height:155px;
+  padding:8px 0 30px;
+  border-bottom:1px solid var(--hairline);
+}
+.project-story__fact:nth-child(n+3) { padding-top:30px; }
+.project-story__fact dt {
+  color:var(--tertiary);
+  font-size:12px;
+  font-weight:760;
+  letter-spacing:.08em;
+}
+.project-story__fact dd {
+  margin:10px 0 0;
+  color:var(--ink);
+  line-height:1.65;
+}
+.project-story__action { margin-top:28px; }
+.video-plate {
+  position:relative;
+  grid-column:1/-1;
+  margin-top:42px;
+  overflow:hidden;
+  background:var(--night);
+  border-radius:var(--radius-stage);
+  box-shadow:var(--shadow-soft);
+}
+.video-plate video {
+  width:100%;
+  max-height:680px;
+  display:block;
+  background:#000;
+  object-fit:contain;
+}
+.video-plate__caption {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:16px 20px 20px;
+  color:rgba(255,255,255,.7);
+  background:var(--night);
+  font-size:13px;
+}
+.media-gap {
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:32px;
+  align-items:center;
+  min-height:118px;
+  margin-top:34px;
+  padding:22px 0;
+  border-top:1px solid var(--hairline);
+  border-bottom:1px solid var(--hairline);
+}
+.media-gap strong { display:block; font-size:19px; }
+.media-gap p { margin:5px 0 0; color:var(--secondary); font-size:14px; }
+.media-gap__code {
+  color:var(--tertiary);
+  font-size:12px;
+  font-variant-numeric:tabular-nums;
+  text-align:right;
+}
+.experience-list { border-top:1px solid var(--hairline); }
+.experience-row {
+  display:grid;
+  grid-template-columns:180px 250px 1fr;
+  gap:30px;
+  padding:28px 0;
+  border-bottom:1px solid var(--hairline);
+}
+.experience-row time { color:var(--tertiary); font-size:13px; font-variant-numeric:tabular-nums; }
+.experience-row strong { font-size:16px; }
+.experience-row p { margin:0; color:var(--secondary); }
+.downloads {
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:center;
+  margin-top:72px;
+  padding:38px 0;
+  border-top:1px solid var(--hairline);
+  border-bottom:1px solid var(--hairline);
+}
+.downloads h3 { margin:0; font-size:28px; letter-spacing:-.03em; }
+.downloads p { margin:6px 0 0; color:var(--secondary); }
+.downloads__actions { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:10px; }
+.page-turn-shell {
+  background:var(--canvas);
+  transition:background 240ms;
+}
+body[data-current-page="projects"] .page-turn-shell { background:var(--surface-warm); }
+.page-turn {
+  width:min(var(--content),calc(100% - 48px));
+  min-height:134px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:stretch;
+  gap:24px;
+  margin:0 auto;
+  padding:22px 0 48px;
+  border-top:1px solid var(--hairline);
+}
+.page-turn__button {
+  min-width:0;
+  min-height:64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  gap:2px;
+  padding:0;
+  color:var(--ink);
+  background:transparent;
+  border:0;
+  text-align:left;
+  transition:opacity 180ms,transform 180ms var(--ease-enter);
+}
+.page-turn__button--next { align-items:flex-end; text-align:right; }
+.page-turn__button:not(:disabled):hover { transform:translateX(-3px); }
+.page-turn__button--next:not(:disabled):hover { transform:translateX(3px); }
+.page-turn__button:disabled { opacity:.24; cursor:not-allowed; }
+.page-turn__direction {
+  color:var(--tertiary);
+  font-size:11px;
+  font-weight:760;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.page-turn__button strong {
+  max-width:100%;
+  overflow:hidden;
+  color:var(--ink);
+  font-size:16px;
+  font-weight:680;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.page-turn__meta {
+  min-width:148px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  text-align:center;
+}
+.page-turn__meta span {
+  color:var(--tertiary);
+  font-size:11px;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:.06em;
+}
+.page-turn__meta strong { font-size:15px; font-weight:720; }
+.footer {
+  width:min(var(--content),calc(100% - 48px));
+  margin:0 auto;
+  padding:34px 0 120px;
+  color:var(--tertiary);
+  font-size:12px;
+}
+.sheet {
+  position:fixed;
+  inset:0;
+  z-index:80;
+  display:grid;
+  align-items:end;
+  background:rgba(5,5,7,.48);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 280ms,visibility 0s linear 280ms;
+}
+.sheet[aria-hidden="false"] {
+  opacity:1;
+  visibility:visible;
+  transition:opacity 280ms,visibility 0s;
+}
+.sheet__panel {
+  width:min(980px,calc(100% - 24px));
+  max-height:min(82svh,820px);
+  margin:0 auto 12px;
+  overflow:auto;
+  color:var(--ink);
+  background:var(--glass-light);
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:var(--radius-stage);
+  box-shadow:0 -24px 90px rgba(0,0,0,.26);
+  -webkit-backdrop-filter:blur(28px) saturate(180%);
+  backdrop-filter:blur(28px) saturate(180%);
+  transform:translateY(28px);
+  transition:transform 320ms var(--ease-enter);
+}
+.sheet[aria-hidden="false"] .sheet__panel { transform:none; }
+.sheet__head {
+  position:sticky;
+  top:0;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 22px;
+  background:rgba(255,255,255,.76);
+  border-bottom:1px solid var(--hairline);
+  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(20px);
+}
+.sheet__head span { color:var(--tertiary); font-size:12px; font-weight:760; letter-spacing:.08em; }
+.sheet__close { color:var(--ink); background:rgba(0,0,0,.06); }
+.sheet__close:hover { background:rgba(0,0,0,.1); }
+.sheet__body { padding:36px 34px 44px; }
+.sheet__body h2 {
+  max-width:760px;
+  margin:0;
+  font-size:clamp(34px,5vw,62px);
+  line-height:1;
+  letter-spacing:-.05em;
+}
+.sheet__summary { max-width:720px; margin:18px 0 34px; color:var(--secondary); }
+.sheet__grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 34px;
+  border-top:1px solid var(--hairline);
+}
+.sheet__item { padding:24px 0; border-bottom:1px solid var(--hairline); }
+.sheet__item b { display:block; color:var(--tertiary); font-size:12px; letter-spacing:.08em; }
+.sheet__item p { margin:8px 0 0; }
+.sheet__actions {
+  display:flex;
+  justify-content:flex-end;
+  margin-top:30px;
+}
+@media (max-width:900px) {
+  .site-nav { inset:10px 12px auto; }
+  .media-hero__inner,.section,.footer { width:min(100% - 36px,var(--content)); }
+  .page-turn { width:min(100% - 36px,var(--content)); }
+  .media-hero__title { font-size:clamp(50px,11vw,86px); }
+  .section-heading { grid-template-columns:1fr; gap:22px; }
+  .track-chapter { grid-template-columns:54px minmax(220px,.9fr) 1.1fr; }
+  .track-chapter__actions { grid-column:2/-1; flex-direction:row; align-items:center; }
+  .project-story { grid-template-columns:1fr; gap:34px; }
+  .project-story__lead p { max-width:680px; }
+  .experience-row { grid-template-columns:150px 220px 1fr; }
+}
+@media (max-width:600px) {
+  body { font-size:16px; line-height:1.625; }
+  .site-nav { min-height:50px; gap:4px; padding:4px 5px 4px 9px; }
+  .site-nav__brand { min-width:42px; gap:0; }
+  .site-nav__brand span:last-child { display:none; }
+  .site-nav__links { gap:0; }
+  .site-nav__links a { min-width:48px; justify-content:center; padding:0 9px; font-size:12px; }
+  .site-nav__index,.site-nav__label--long { display:none; }
+  .site-nav__label--short { display:inline; }
+  .media-hero { min-height:100svh; }
+  .media-hero__inner { width:calc(100% - 32px); padding:104px 0 calc(28px + env(safe-area-inset-bottom)); }
+  .media-hero__eyebrow { font-size:11px; }
+  .media-hero__title { margin-top:13px; font-size:clamp(47px,15vw,70px); line-height:.96; }
+  .media-hero__meta { gap:7px 12px; margin-top:18px; font-size:12px; }
+  .media-hero__meta span + span::before { margin-right:12px; }
+  .waveform { height:104px; gap:2px; margin:32px 0 15px; }
+  .timeline { grid-template-columns:46px 1fr 46px; gap:7px; }
+  .player {
+    grid-template-columns:44px 44px minmax(0,1fr) 44px;
+    gap:4px;
+    min-height:66px;
+    margin-top:24px;
+    padding:7px;
+  }
+  .player [data-action="previous-track"] { display:none; }
+  .player__track { padding:0 5px; }
+  .player__volume {
+    grid-column:1/-1;
+    min-width:0;
+    padding:0 10px 0 12px;
+  }
+  .player__status { display:none; }
+  .floating-dock {
+    right:10px;
+    bottom:max(10px,env(safe-area-inset-bottom));
+    width:calc(100vw - 20px);
+    grid-template-columns:44px minmax(0,1fr) minmax(64px,78px) 44px;
+  }
+  .dock__volume { min-width:0; }
+  .floating-dock [data-action="previous-track"] { display:none; }
+  .floating-dock [data-action="expand-player"] { display:none; }
+  .section { width:calc(100% - 32px); padding:82px 0; }
+  .section-heading { margin-bottom:42px; }
+  .section-heading h2 { font-size:42px; }
+  .section-heading p { font-size:16px; }
+  .track-chapter {
+    grid-template-columns:40px 1fr;
+    gap:12px 14px;
+    min-height:0;
+    padding:30px 0;
+  }
+  .track-chapter::before { inset:0 -10px; }
+  .track-chapter__title h3 { font-size:30px; }
+  .track-chapter__story { grid-column:2; font-size:15px; }
+  .track-chapter__actions { grid-column:2; flex-wrap:wrap; align-items:flex-start; }
+  .project-story { padding:54px 0; }
+  .project-story__lead h3 { font-size:39px; }
+  .project-story__facts { grid-template-columns:1fr; }
+  .project-story__fact { min-height:0; padding:23px 0; }
+  .project-story__fact:nth-child(n+3) { padding-top:23px; }
+  .video-plate { margin-top:20px; border-radius:var(--radius-lg); }
+  .video-plate__caption { align-items:flex-start; flex-direction:column; }
+  .media-gap { grid-template-columns:1fr; gap:8px; }
+  .media-gap__code { text-align:left; }
+  .experience-row { grid-template-columns:1fr; gap:7px; padding:24px 0; }
+  .downloads { grid-template-columns:1fr; gap:24px; }
+  .downloads__actions { justify-content:flex-start; }
+  .page-turn {
+    width:calc(100% - 32px);
+    min-height:120px;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+    gap:10px;
+    padding:16px 0 38px;
+  }
+  .page-turn__button { min-height:58px; }
+  .page-turn__button strong { display:none; }
+  .page-turn__direction { font-size:10px; }
+  .page-turn__meta { min-width:112px; }
+  .page-turn__meta strong { font-size:14px; }
+  .sheet__panel { width:calc(100% - 12px); max-height:88svh; margin-bottom:6px; }
+  .sheet__body { padding:28px 20px 36px; }
+  .sheet__grid { grid-template-columns:1fr; }
+  .footer { width:calc(100% - 32px); padding-bottom:110px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after {
+    scroll-behavior:auto !important;
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .waveform__bar { transform:none !important; }
+}
+</style>
+</head>
+<body>
+<header class="site-nav" aria-label="主导航">
+  <a class="site-nav__brand" href="#works" data-page-link="works" aria-label="返回作品试听页">
+    <span class="site-nav__mark" aria-hidden="true">R</span>
+    <span>Rosalie Wu · Music Producer</span>
+  </a>
+  <nav class="site-nav__links" aria-label="作品分页">
+    <a href="#works" data-page-link="works" aria-current="page">
+      <span class="site-nav__index">01</span>
+      <span class="site-nav__label--long">作品试听</span>
+      <span class="site-nav__label--short">作品</span>
+    </a>
+    <a href="#projects" data-page-link="projects">
+      <span class="site-nav__index">02</span>
+      <span class="site-nav__label--long">项目现场</span>
+      <span class="site-nav__label--short">项目</span>
+    </a>
+    <a href="#experience" data-page-link="experience">
+      <span class="site-nav__index">03</span>
+      <span class="site-nav__label--long">经历与下载</span>
+      <span class="site-nav__label--short">经历</span>
+    </a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="portfolio-page" id="works" data-page-panel="works" aria-labelledby="worksTitle">
+  <section class="media-hero" id="hero" data-playing="false" aria-labelledby="heroTitle">
+    <div class="media-hero__glow" aria-hidden="true"></div>
+    <div class="media-hero__inner">
+      <div class="media-hero__eyebrow">Selected work · 20-second focus</div>
+      <h1 class="media-hero__title" id="heroTitle" data-current-track-title>Road-warrior Ghost</h1>
+      <div class="media-hero__meta">
+        <span data-current-track-context>AI 音乐创作大赛作品</span>
+        <span data-current-track-credit>作曲 / 编曲 / 制作</span>
+        <span>完整音频</span>
+      </div>
+      <div class="waveform" id="waveform" aria-hidden="true"></div>
+      <div class="timeline">
+        <span id="currentTime">00:00</span>
+        <input id="progress" type="range" min="0" max="1000" value="0" aria-label="播放进度">
+        <span id="duration">03:19</span>
+      </div>
+      <div class="player" id="heroPlayer" data-player-surface>
+        <button class="player__button" type="button" data-action="previous-track" aria-label="上一首">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6V5Zm3 7 9-7v14l-9-7Z"/></svg>
+        </button>
+        <button class="player__button player__button--primary" type="button" data-action="toggle-play" aria-label="播放">
+          <svg data-play-icon viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+        </button>
+        <button class="player__button" type="button" data-action="next-track" aria-label="下一首">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2V5ZM6 5l9 7-9 7V5Z"/></svg>
+        </button>
+        <div class="player__track">
+          <strong data-current-track-title>Road-warrior Ghost</strong>
+          <span data-current-track-context>AI 音乐创作大赛作品</span>
+        </div>
+        <label class="player__volume">
+          <span class="sr-only">播放音量</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a3.5 3.5 0 0 0-1.5-2.87v5.74A3.5 3.5 0 0 0 16.5 12Zm-1.5-7v2.08a5.5 5.5 0 0 1 0 9.84V19a7.5 7.5 0 0 0 0-14Z"/></svg>
+          <input type="range" min="0" max="1" step="0.01" value="0.72" data-volume aria-label="播放音量">
+        </label>
+        <div class="player__status" data-media-status data-state="ready" aria-live="polite">可播放 · 重点片段 00:20</div>
+      </div>
+      <audio id="mainAudio" preload="metadata" src="assets/audio/road-warrior-ghost.mp3"></audio>
+    </div>
+  </section>
+
+  <section class="section" id="works-list" aria-labelledby="worksTitle">
+    <div class="section-heading">
+      <div>
+        <div class="section-heading__eyebrow">Selected works</div>
+        <h2 id="worksTitle">五首代表作，覆盖不同创作语境。</h2>
+      </div>
+      <p>涵盖 AI 音乐创作、短篇叙事、东方音色实验与成长主题，每首可试听完整音频与 20 秒重点片段。</p>
+    </div>
+    <div class="track-list" id="trackList"></div>
+  </section>
+  </div>
+
+  <div class="portfolio-page" id="projects" data-page-panel="projects" aria-labelledby="projectsTitle" hidden>
+  <div class="project-zone">
+    <section class="section" aria-labelledby="projectsTitle">
+      <div class="section-heading">
+        <div>
+          <div class="section-heading__eyebrow">Selected projects</div>
+          <h2 id="projectsTitle">音乐创作进入品牌、舞台与数字内容场景。</h2>
+        </div>
+        <p>项目覆盖新车品牌主题曲、开发者大会舞台、游戏原声栏目、节日 H5 与非遗数字人内容。</p>
+      </div>
+      <div id="projectStories"></div>
+
+      <template id="hdcVideoTemplate">
+        <div class="video-plate">
+          <video data-project-video="hdc-good-time" controls preload="metadata" playsinline poster="assets/v2/images/hdc-good-time-poster.jpg" src="assets/v2/video/hdc-good-time.mp4" aria-label="HDC 2026 It’s a good time 现场视频"></video>
+          <div class="video-plate__caption"><span>HDC 2026 · 现场版本 · 03:29</span><span>完整现场视频 · Web 播放版本</span></div>
+        </div>
+      </template>
+      <template id="ajinVideoTemplate">
+        <div class="video-plate">
+          <video data-project-video="ajin" controls preload="metadata" playsinline poster="assets/v2/images/ajin-poster.jpg" src="assets/v2/video/ajin-xibei-huaer.mp4" aria-label="非遗数字人阿锦西北花儿视频"></video>
+          <div class="video-plate__caption"><span>非遗数字人「阿锦」· 西北花儿 · 02:55</span><span>完整成片 · 可播放视频</span></div>
+        </div>
+      </template>
+    </section>
+  </div>
+  </div>
+
+  <div class="portfolio-page" id="experience" data-page-panel="experience" aria-labelledby="experienceTitle" hidden>
+  <section class="section" id="experience-content" aria-labelledby="experienceTitle">
+    <div class="section-heading">
+      <div>
+        <div class="section-heading__eyebrow">Experience</div>
+        <h2 id="experienceTitle">音乐创作、品牌内容与平台交付经历。</h2>
+      </div>
+      <p>经历覆盖 AI 词曲创作、影视 OST、广告与短视频音乐项目。</p>
+    </div>
+    <div class="experience-list" id="experienceList"></div>
+    <div class="downloads" id="downloads">
+      <div>
+        <h3>简历与补充材料</h3>
+        <p>提供 AI 音乐通用版与华为项目强化版简历。</p>
+      </div>
+      <div class="downloads__actions">
+        <a class="text-button text-button--primary" href="downloads/music-producer-resume.pdf" download>AI 音乐简历</a>
+        <a class="text-button" href="downloads/project-profile-resume.pdf" download>华为强化版</a>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <div class="floating-dock" id="floatingDock" data-player-surface data-active="false" hidden>
+    <button class="dock__button" type="button" data-action="previous-track" aria-label="上一首">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6V5Zm3 7 9-7v14l-9-7Z"/></svg>
+    </button>
+    <button class="dock__button" type="button" data-action="toggle-play" aria-label="播放">
+      <svg data-play-icon viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+    </button>
+    <div class="dock__copy">
+      <strong data-current-track-title>Road-warrior Ghost</strong>
+      <span data-current-track-context>AI 音乐创作大赛作品</span>
+      <span class="dock__status" data-media-status data-state="ready" aria-live="polite">可播放</span>
+    </div>
+    <label class="dock__volume">
+      <span class="sr-only">播放音量</span>
+      <input type="range" min="0" max="1" step="0.01" value="0.72" data-volume aria-label="播放音量">
+    </label>
+    <button class="dock__button" type="button" data-action="next-track" aria-label="下一首">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2V5ZM6 5l9 7-9 7V5Z"/></svg>
+    </button>
+    <button class="dock__button" type="button" data-action="expand-player" aria-label="展开播放器">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 14.6 12 9l5.6 5.6 1.4-1.4-7-7-7 7 1.4 1.4Z"/></svg>
+    </button>
+  </div>
+
+  <div class="page-turn-shell">
+    <nav class="page-turn" id="pageTurn" aria-label="页面导航">
+      <button class="page-turn__button" type="button" data-action="previous-page" disabled>
+        <span class="page-turn__direction">← 上一页</span>
+        <strong data-previous-page-name>已到第一页</strong>
+      </button>
+      <div class="page-turn__meta">
+        <span data-page-status aria-live="polite">01 / 03</span>
+        <strong data-page-name>作品试听</strong>
+      </div>
+      <button class="page-turn__button page-turn__button--next" type="button" data-action="next-page">
+        <span class="page-turn__direction">下一页 →</span>
+        <strong data-next-page-name>项目现场</strong>
+      </button>
+    </nav>
+  </div>
+</main>
+
+<footer class="footer">更新于 2026-07-31 · 5 首完整音频 · 2 段项目视频 · 2 份简历材料</footer>
+
+<div class="sheet" id="evidenceSheet" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sheetTitle">
+  <div class="sheet__panel" tabindex="-1">
+    <div class="sheet__head">
+      <span>PROJECT DETAILS</span>
+      <button class="sheet__close" type="button" data-action="close-sheet" aria-label="关闭项目详情">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm11.2 0L19 6.4 6.4 19 5 17.6 17.6 5Z"/></svg>
+      </button>
+    </div>
+    <div class="sheet__body" id="sheetBody"></div>
+  </div>
+</div>
+
+<script>
+const MOCK = {
+  tracks: [
+    {
+      id:"crush", title:"Crush", file:"assets/audio/crush.mp3", duration:233.84,
+      highlightStart:18, context:"AI 音乐创作与发行", credit:"作曲 / 编曲 / 制作",
+      story:"用更紧凑的和声推进与人声留白，让副歌在短时间内建立记忆点。"
+    },
+    {
+      id:"free-verse", title:"自由诗", file:"assets/audio/free-verse.mp3", duration:94.96,
+      highlightStart:12, context:"短篇音乐叙事", credit:"作曲 / 编曲 / 制作",
+      story:"以短篇幅完成情绪起承转合，重点保留呼吸感与段落之间的动态反差。"
+    },
+    {
+      id:"road-warrior-ghost", title:"Road-warrior Ghost", file:"assets/audio/road-warrior-ghost.mp3", duration:198.93,
+      highlightStart:20, context:"AI 音乐创作大赛作品", credit:"作曲 / 编曲 / 制作",
+      story:"把公路感、速度感和幽灵般的空间残响放进同一条推进线，20 秒片段集中呈现作品辨识度。"
+    },
+    {
+      id:"china", title:"China", file:"assets/audio/china.mp3", duration:154.84,
+      highlightStart:24, context:"东方音色实验", credit:"作曲 / 编曲 / 制作",
+      story:"将传统音色线索放进现代节拍结构，控制民族元素的比例，让旋律保持清晰。"
+    },
+    {
+      id:"path-to-my-dream", title:"The path to my dream", file:"assets/audio/path-to-my-dream.mp3", duration:214.88,
+      highlightStart:31, context:"成长主题音乐叙事", credit:"作曲 / 编曲 / 制作",
+      story:"从克制的开场逐步扩大声场，用层次递进承接成长主题，避免情绪一次性推满。"
+    }
+  ],
+  projects: [
+    {
+      id:"zhijie-v9", index:"01", title:"智界 V9《赴光前行》",
+      summary:"面向新车品牌主题曲场景，将品牌关键词转成可听见的情绪推进。",
+      scene:"智界 V9 新车品牌主题曲，需要同时承接产品气质、传播记忆点与完整歌曲结构。",
+      role:"负责词曲创作，拆解品牌调性、风格参考和情绪曲线，完成歌词修改、旋律 Demo 与终版音轨交付。",
+      strategy:"以品牌关键词约束叙事方向：主歌建立产品气质，副歌强化传播记忆点，保持风格表达与品牌语义一致。",
+      carrier:"终版音轨已交付；公开试听暂未接入。",
+      status:"终版音轨已交付 · 试听暂未接入", tone:"limited", media:"gap",
+      mediaTitle:"《赴光前行》终版音轨", mediaNote:"公开试听暂未接入"
+    },
+    {
+      id:"hdc-good-time", index:"02", title:"HDC 2026《It’s a good time》",
+      summary:"为开发者大会机器人舞蹈现场曲目处理机械律动与动作节奏之间的匹配。",
+      scene:"开发者大会机器人舞蹈曲目，需要音乐节拍支持机械动作、现场段落与舞台节奏。",
+      role:"参与曲目创作，根据机械律动和现场动作调整节拍结构，配合 Demo 到现场版本交付。",
+      strategy:"动作落点与段落切换保持清晰，声部密度为机械动作留出可识别的节奏空间。",
+      carrier:"209.5 秒 HDC 现场视频，完整呈现现场版本与音乐内容。",
+      status:"完整现场视频可播放", tone:"available", media:"hdc"
+    },
+    {
+      id:"night-falls", index:"03", title:"玩懂音乐《夜幕之下》",
+      summary:"音乐与游戏部门合作的原声碟鉴赏栏目，以《夜幕之下》为第一期主题。",
+      scene:"栏目需要把游戏原声、作品语境与读者理解路径组织在同一内容载体中。",
+      role:"参与音乐与游戏部门合作栏目《玩懂音乐》，首期主题为《夜幕之下》。",
+      strategyLabel:"项目内容",
+      strategy:"首期以游戏原声鉴赏为主线，围绕《夜幕之下》展开作品背景与听感内容。",
+      carrier:"《夜幕之下》首期项目记录；完整页面暂未接入。",
+      status:"首期项目记录已提供 · 完整页面暂未接入", tone:"limited", media:"gap",
+      mediaTitle:"《夜幕之下》栏目首期", mediaNote:"完整页面暂未接入"
+    },
+    {
+      id:"echoes", index:"04", title:"《听见回响：跨越时代的女性乐章》",
+      summary:"围绕三八妇女节主题制作的 H5 内容项目。",
+      scene:"节日主题 H5 需要在有限浏览路径内连接人物、音乐线索与主题表达。",
+      role:"参与三八妇女节主题 H5《听见回响》制作。",
+      strategyLabel:"项目内容",
+      strategy:"以人物与音乐线索串联跨时代女性主题。",
+      carrier:"三八妇女节主题 H5；公开链接或录屏暂未接入。",
+      status:"主题 H5 项目记录已提供 · 载体暂未接入", tone:"limited", media:"gap",
+      mediaTitle:"《听见回响》H5", mediaNote:"公开链接或录屏暂未接入"
+    },
+    {
+      id:"ajin", index:"05", title:"非遗数字人「阿锦」",
+      summary:"AI 非遗数字人内容，本期以“西北花儿”为主题连接数字角色与传统音乐。",
+      scene:"数字人内容需要让角色表达、非遗主题和音轨节奏保持一致，形成可连续观看的成片。",
+      role:"参与数字人内容与音轨调教，配合角色表达和“西北花儿”主题完成成片。",
+      strategy:"围绕角色表达调整音轨节奏，使数字人表演与非遗主题保持一致。",
+      carrier:"175.8 秒完整成片，呈现数字角色、“西北花儿”主题与配套音轨。",
+      status:"完整成片可播放", tone:"available", media:"ajin"
+    }
+  ],
+  experiences: [
+    { period:"2026.01—至今", org:"华为终端云服务 · 音乐业务", detail:"参与 AI 词曲创作、品牌主题曲、HDC 舞台曲目与数字人音乐内容交付。" },
+    { period:"2025.08—2026.01", org:"旁晚怪物", detail:"参与影视 OST 与创作者内容项目，覆盖音乐方案、短视频宣发与版本协作。" },
+    { period:"2024.11—2025.08", org:"嘉庚音妙", detail:"参与广告片、短视频和电商片头音乐项目，将客户需求拆解为节奏、情绪与记忆点。" }
+  ],
+  waveform:[18,22,30,26,34,42,31,28,38,52,66,46,34,40,58,82,64,45,38,48,70,93,74,52,46,61,78,68,42,36,54,73,88,69,47,40,57,75,62,41,34,46,58,72,61,45,38,52,67,84,65,44,33,43,56,70,51,37,31,39,52,63,48,34,28,35,46,58,43,30,24,31,42,53,39,27,21,28,37,47,35,25]
+};
+
+const $ = (selector, scope=document) => scope.querySelector(selector);
+const $$ = (selector, scope=document) => [...scope.querySelectorAll(selector)];
+const esc = (value) => {
+  const node=document.createElement("span");
+  node.textContent=value ?? "—";
+  return node.innerHTML;
+};
+const formatTime = (seconds) => {
+  const safe=Number.isFinite(seconds) ? Math.max(0,seconds) : 0;
+  const minutes=Math.floor(safe/60);
+  const remainder=Math.floor(safe%60);
+  return `${String(minutes).padStart(2,"0")}:${String(remainder).padStart(2,"0")}`;
+};
+
+const PAGES = [
+  { id:"works", title:"作品试听" },
+  { id:"projects", title:"项目现场" },
+  { id:"experience", title:"经历与下载" }
+];
+const state = {
+  trackIndex:MOCK.tracks.findIndex((track) => track.id === "road-warrior-ghost"),
+  pageIndex:0,
+  heroIntersecting:true,
+  lastFocus:null
+};
+const audio=$("#mainAudio");
+const hero=$("#hero");
+const heroPlayer=$("#heroPlayer");
+const dock=$("#floatingDock");
+const progress=$("#progress");
+const evidenceSheet=$("#evidenceSheet");
+const pagePanels=$$("[data-page-panel]");
+const pageLinks=$$("[data-page-link]");
+const previousPageButton=$("[data-action='previous-page']");
+const nextPageButton=$("[data-action='next-page']");
+const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const scrollBehavior=reducedMotion ? "auto" : "smooth";
+
+function pageFromHash(hash=window.location.hash) {
+  const raw=decodeURIComponent(hash.replace(/^#/,""));
+  if (PAGES.some((page) => page.id===raw)) return raw;
+  if (raw.startsWith("project-")) return "projects";
+  if (raw==="downloads") return "experience";
+  return "works";
+}
+
+function pauseHiddenVideos() {
+  pagePanels
+    .filter((panel) => panel.hidden)
+    .flatMap((panel) => $$("video",panel))
+    .forEach((video) => video.pause());
+}
+
+function syncPlayerSurfaces() {
+  const worksActive=PAGES[state.pageIndex].id==="works";
+  const dockActive=!worksActive || !state.heroIntersecting;
+  heroPlayer.hidden=dockActive;
+  dock.hidden=!dockActive;
+  dock.dataset.active=String(dockActive);
+}
+
+function syncPageControls() {
+  const current=PAGES[state.pageIndex];
+  const previous=PAGES[state.pageIndex-1];
+  const next=PAGES[state.pageIndex+1];
+
+  pageLinks.forEach((link) => {
+    if (link.dataset.pageLink===current.id) link.setAttribute("aria-current","page");
+    else link.removeAttribute("aria-current");
+  });
+  previousPageButton.disabled=!previous;
+  nextPageButton.disabled=!next;
+  previousPageButton.setAttribute("aria-label",previous ? `上一页：${previous.title}` : "已到第一页");
+  nextPageButton.setAttribute("aria-label",next ? `下一页：${next.title}` : "已到最后一页");
+  $("[data-previous-page-name]").textContent=previous?.title || "已到第一页";
+  $("[data-next-page-name]").textContent=next?.title || "已到最后一页";
+  $("[data-page-name]").textContent=current.title;
+  $("[data-page-status]").textContent=`${String(state.pageIndex+1).padStart(2,"0")} / ${String(PAGES.length).padStart(2,"0")}`;
+}
+
+function setPage(pageId,{historyMode="push",scroll=true,focus=false}={}) {
+  const nextIndex=PAGES.findIndex((page) => page.id===pageId);
+  if (nextIndex<0) return;
+  state.pageIndex=nextIndex;
+  const current=PAGES[state.pageIndex];
+
+  pagePanels.forEach((panel) => {
+    panel.hidden=panel.dataset.pagePanel!==current.id;
+  });
+  document.body.dataset.currentPage=current.id;
+  document.title=`Rosalie Wu · ${current.title}`;
+  syncPageControls();
+  pauseHiddenVideos();
+  syncPlayerSurfaces();
+
+  const nextHash=`#${current.id}`;
+  if (historyMode!=="none" && window.location.hash!==nextHash) {
+    const method=historyMode==="replace" ? "replaceState" : "pushState";
+    window.history[method](null,"",nextHash);
+  }
+  if (scroll) window.scrollTo({top:0,behavior:scrollBehavior});
+  if (focus) {
+    requestAnimationFrame(() => {
+      const heading=$("h1,h2",pagePanels[state.pageIndex]);
+      if (!heading) return;
+      heading.setAttribute("tabindex","-1");
+      heading.focus({preventScroll:true});
+    });
+  }
+}
+
+$("#waveform").innerHTML=MOCK.waveform.map((height) => {
+  const bar=document.createElement("span");
+  bar.className="waveform__bar";
+  bar.style.setProperty("--wave-height",height);
+  return bar.outerHTML;
+}).join("");
+
+function renderTracks() {
+  $("#trackList").innerHTML=MOCK.tracks.map((track,index) => `
+    <article class="track-chapter" data-track="${esc(track.id)}" data-current="${index===state.trackIndex}">
+      <div class="track-chapter__number">${String(index+1).padStart(2,"0")}</div>
+      <div class="track-chapter__title">
+        <h3>${esc(track.title)}</h3>
+        <p>${esc(track.context)} · ${formatTime(track.duration)}</p>
+      </div>
+      <p class="track-chapter__story">${esc(track.story)}</p>
+      <div class="track-chapter__actions">
+        <button class="text-button text-button--primary" type="button" data-action="select-track" data-track="${esc(track.id)}">播放完整作品</button>
+        <button class="text-button" type="button" data-action="jump-highlight" data-track="${esc(track.id)}">20 秒重点片段</button>
+      </div>
+    </article>`).join("");
+}
+
+function projectMedia(project) {
+  if (project.media === "hdc") return $("#hdcVideoTemplate").innerHTML;
+  if (project.media === "ajin") return $("#ajinVideoTemplate").innerHTML;
+  return `<div class="media-gap" data-media-state="unavailable">
+    <div><strong>${esc(project.mediaTitle)}</strong><p>${esc(project.mediaNote)}</p></div>
+    <div class="media-gap__code">素材状态</div>
+  </div>`;
+}
+
+function renderProjects() {
+  $("#projectStories").innerHTML=MOCK.projects.map((project) => `
+    <article class="project-story" id="project-${esc(project.id)}" data-project="${esc(project.id)}">
+      <div class="project-story__lead">
+        <div class="project-story__index">${esc(project.index)} · Project</div>
+        <h3>${esc(project.title)}</h3>
+        <p>${esc(project.summary)}</p>
+        <div class="project-story__status" data-tone="${esc(project.tone)}">${esc(project.status)}</div>
+      </div>
+      <div>
+        <dl class="project-story__facts">
+          <div class="project-story__fact"><dt>业务场景</dt><dd>${esc(project.scene)}</dd></div>
+          <div class="project-story__fact"><dt>本人职责</dt><dd>${esc(project.role)}</dd></div>
+          <div class="project-story__fact"><dt>${esc(project.strategyLabel || "制作策略")}</dt><dd>${esc(project.strategy)}</dd></div>
+          <div class="project-story__fact"><dt>上线载体</dt><dd>${esc(project.carrier)}</dd></div>
+        </dl>
+        <div class="project-story__action">
+          <button class="text-button" type="button" data-action="open-evidence" data-project="${esc(project.id)}">查看项目详情</button>
+        </div>
+      </div>
+      ${projectMedia(project)}
+    </article>`).join("");
+}
+
+function renderExperiences() {
+  $("#experienceList").innerHTML=MOCK.experiences.map((item) => `
+    <div class="experience-row">
+      <time>${esc(item.period)}</time>
+      <strong>${esc(item.org)}</strong>
+      <p>${esc(item.detail)}</p>
+    </div>`).join("");
+}
+
+function setTrack(index,{autoplay=false}={}) {
+  const next=(index+MOCK.tracks.length)%MOCK.tracks.length;
+  const track=MOCK.tracks[next];
+  state.trackIndex=next;
+  const changed=!audio.getAttribute("src")?.endsWith(track.file);
+  if (changed) {
+    audio.src=track.file;
+    audio.load();
+  }
+  $$("[data-current-track-title]").forEach((node) => { node.textContent=track.title; });
+  $$("[data-current-track-context]").forEach((node) => { node.textContent=track.context; });
+  $$("[data-current-track-credit]").forEach((node) => { node.textContent=track.credit; });
+  $("#duration").textContent=formatTime(track.duration);
+  setMediaStatus("ready",`可播放 · 重点片段 ${formatTime(track.highlightStart)}`);
+  renderTracks();
+  if (autoplay) audio.play().catch(() => setPausedState(true));
+}
+
+function setMediaStatus(status,message) {
+  $$("[data-media-status]").forEach((node) => {
+    node.dataset.state=status;
+    node.textContent=message;
+  });
+}
+
+function setPausedState(paused) {
+  hero.dataset.playing=String(!paused);
+  $$("[data-action='toggle-play']").forEach((button) => {
+    button.setAttribute("aria-label",paused ? "播放" : "暂停");
+    const icon=$("[data-play-icon]",button);
+    icon.innerHTML=paused
+      ? '<path d="m8 5 11 7-11 7V5Z"/>'
+      : '<path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z"/>';
+  });
+}
+
+function togglePlay() {
+  if (audio.paused) audio.play().catch(() => {
+    setMediaStatus("error","暂时无法播放，请切换其他作品");
+  });
+  else audio.pause();
+}
+
+function jumpHighlight(trackId) {
+  const index=MOCK.tracks.findIndex((track) => track.id === trackId);
+  if (index<0) return;
+  setTrack(index);
+  const seek=() => {
+    audio.currentTime=Math.min(MOCK.tracks[index].highlightStart,Math.max(0,audio.duration-.2));
+    progress.value=Math.round((audio.currentTime/audio.duration)*1000);
+  };
+  if (audio.readyState>=1) seek();
+  else audio.addEventListener("loadedmetadata",seek,{once:true});
+}
+
+function updateProgress() {
+  const duration=audio.duration || MOCK.tracks[state.trackIndex].duration;
+  const ratio=duration ? audio.currentTime/duration : 0;
+  progress.value=Math.round(ratio*1000);
+  progress.style.setProperty("--progress",`${ratio*100}%`);
+  $("#currentTime").textContent=formatTime(audio.currentTime);
+  $("#duration").textContent=formatTime(duration);
+}
+
+function openSheet(projectId,trigger) {
+  const project=MOCK.projects.find((item) => item.id === projectId);
+  if (!project) return;
+  state.lastFocus=trigger;
+  $("#sheetBody").innerHTML=`
+    <h2 id="sheetTitle">${esc(project.title)}</h2>
+    <p class="sheet__summary">${esc(project.summary)}</p>
+    <div class="sheet__grid">
+      <div class="sheet__item"><b>业务场景</b><p>${esc(project.scene)}</p></div>
+      <div class="sheet__item"><b>本人职责</b><p>${esc(project.role)}</p></div>
+      <div class="sheet__item"><b>${esc(project.strategyLabel || "制作策略")}</b><p>${esc(project.strategy)}</p></div>
+      <div class="sheet__item"><b>上线载体</b><p>${esc(project.carrier)}</p></div>
+    </div>
+    <div class="sheet__actions">
+      <button class="text-button text-button--primary" type="button" data-action="go-to-project" data-project="${esc(project.id)}">回到项目章节</button>
+    </div>`;
+  evidenceSheet.setAttribute("aria-hidden","false");
+  document.body.classList.add("sheet-open");
+  const closeButton=$("[data-action='close-sheet']",evidenceSheet);
+  requestAnimationFrame(() => closeButton.focus());
+}
+
+function closeSheet() {
+  if (evidenceSheet.getAttribute("aria-hidden") === "true") return;
+  evidenceSheet.setAttribute("aria-hidden","true");
+  document.body.classList.remove("sheet-open");
+  state.lastFocus?.focus();
+}
+
+function trapSheetFocus(event) {
+  if (evidenceSheet.getAttribute("aria-hidden") === "true") return;
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeSheet();
+    return;
+  }
+  if (event.key !== "Tab") return;
+  const focusable=$$("button,[href],input,[tabindex]:not([tabindex='-1'])",evidenceSheet)
+    .filter((node) => !node.disabled && node.offsetParent !== null);
+  if (!focusable.length) return;
+  const first=focusable[0];
+  const last=focusable[focusable.length-1];
+  if (event.shiftKey && document.activeElement===first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement===last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+document.addEventListener("click",(event) => {
+  const pageLink=event.target.closest("[data-page-link]");
+  if (pageLink) {
+    event.preventDefault();
+    setPage(pageLink.dataset.pageLink,{focus:true});
+    return;
+  }
+  const action=event.target.closest("[data-action]");
+  if (!action) {
+    if (event.target===evidenceSheet) closeSheet();
+    return;
+  }
+  const type=action.dataset.action;
+  if (type==="toggle-play") togglePlay();
+  if (type==="previous-track") setTrack(state.trackIndex-1,{autoplay:!audio.paused});
+  if (type==="next-track") setTrack(state.trackIndex+1,{autoplay:!audio.paused});
+  if (type==="previous-page" && state.pageIndex>0) {
+    setPage(PAGES[state.pageIndex-1].id,{focus:true});
+  }
+  if (type==="next-page" && state.pageIndex<PAGES.length-1) {
+    setPage(PAGES[state.pageIndex+1].id,{focus:true});
+  }
+  if (type==="select-track") {
+    const index=MOCK.tracks.findIndex((track) => track.id===action.dataset.track);
+    setTrack(index,{autoplay:true});
+  }
+  if (type==="jump-highlight") jumpHighlight(action.dataset.track);
+  if (type==="open-evidence") openSheet(action.dataset.project,action);
+  if (type==="close-sheet") closeSheet();
+  if (type==="go-to-project") {
+    const projectId=action.dataset.project;
+    closeSheet();
+    setPage("projects",{scroll:false});
+    requestAnimationFrame(() => {
+      const target=$(`#project-${CSS.escape(projectId)}`);
+      target?.scrollIntoView({behavior:scrollBehavior,block:"start"});
+      $("[data-action='open-evidence']",target)?.focus({preventScroll:true});
+    });
+  }
+  if (type==="expand-player") {
+    setPage("works",{scroll:false});
+    requestAnimationFrame(() => $("#hero").scrollIntoView({behavior:scrollBehavior}));
+  }
+});
+document.addEventListener("keydown",trapSheetFocus);
+document.addEventListener("keydown",(event) => {
+  if (evidenceSheet.getAttribute("aria-hidden") === "false") return;
+  if (
+    event.defaultPrevented ||
+    event.isComposing ||
+    event.altKey ||
+    event.ctrlKey ||
+    event.metaKey ||
+    event.shiftKey
+  ) return;
+  const interactive=document.activeElement?.closest?.("button,a,input,textarea,select,video,audio,[contenteditable='true']");
+  if (interactive) return;
+  if (event.code==="Space") {
+    event.preventDefault();
+    togglePlay();
+  }
+  if (event.key==="ArrowRight" && state.pageIndex<PAGES.length-1) {
+    event.preventDefault();
+    setPage(PAGES[state.pageIndex+1].id,{focus:true});
+  }
+  if (event.key==="ArrowLeft" && state.pageIndex>0) {
+    event.preventDefault();
+    setPage(PAGES[state.pageIndex-1].id,{focus:true});
+  }
+});
+window.addEventListener("hashchange",() => {
+  const raw=decodeURIComponent(window.location.hash.replace(/^#/,""));
+  const deepTarget=raw.startsWith("project-") || raw==="downloads" ? raw : null;
+  setPage(pageFromHash(),{historyMode:"none",scroll:!deepTarget});
+  if (deepTarget) {
+    requestAnimationFrame(() => {
+      $(`#${CSS.escape(deepTarget)}`)?.scrollIntoView({behavior:scrollBehavior,block:"start"});
+    });
+  }
+});
+progress.addEventListener("input",() => {
+  if (!Number.isFinite(audio.duration)) return;
+  audio.currentTime=(Number(progress.value)/1000)*audio.duration;
+  updateProgress();
+});
+const volumes=$$("[data-volume]");
+function setVolume(value) {
+  const safe=Math.min(1,Math.max(0,Number(value)));
+  audio.volume=safe;
+  volumes.forEach((control) => {
+    control.value=String(safe);
+    control.style.setProperty("--volume",`${safe*100}%`);
+  });
+}
+setVolume(volumes[0].value);
+volumes.forEach((control) => {
+  control.addEventListener("input",() => setVolume(control.value));
+});
+audio.addEventListener("timeupdate",updateProgress);
+audio.addEventListener("loadedmetadata",updateProgress);
+audio.addEventListener("play",() => setPausedState(false));
+audio.addEventListener("pause",() => setPausedState(true));
+audio.addEventListener("ended",() => setTrack(state.trackIndex+1,{autoplay:true}));
+audio.addEventListener("error",() => {
+  setMediaStatus("error","暂时无法播放，请切换其他作品");
+  setPausedState(true);
+});
+
+const heroObserver=new IntersectionObserver(([entry]) => {
+  state.heroIntersecting=entry.isIntersecting;
+  syncPlayerSurfaces();
+},{threshold:.12});
+heroObserver.observe(hero);
+
+renderTracks();
+renderProjects();
+renderExperiences();
+setTrack(state.trackIndex);
+const initialHash=window.location.hash;
+setPage(pageFromHash(initialHash),{
+  historyMode:initialHash ? "none" : "replace",
+  scroll:false
+});
+if (initialHash.startsWith("#project-") || initialHash==="#downloads") {
+  requestAnimationFrame(() => {
+    $(initialHash)?.scrollIntoView({behavior:"auto",block:"start"});
+  });
+}
+</script>
+</body>
+</html>
